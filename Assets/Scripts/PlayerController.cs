@@ -13,9 +13,10 @@ public class PlayerController : MonoBehaviour {
     public float playerSpeed;
     public Boundary boundary;
 
-    public Weapon weapon;
-    //public GameObject shot;
-    //public Transform shotSpawner;
+   
+    private float fireRate;
+    public float shotDelay;
+    public Transform shotSpawner;
     
 
     // Use this for initialization
@@ -28,30 +29,52 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	private void Update ()
     {
-		if(Input.GetAxis("Right_Trigger") == 1)
-        {
-            weapon.Fire();
-
-        }
-	}
+        
+    }
     private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        float rx = Input.GetAxis("Right_Horizontal");
+        float ry = Input.GetAxis("Right_Vertical");
 
         //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.Translate(moveHorizontal * Time.deltaTime * playerSpeed, 0, moveVertical * Time.deltaTime * playerSpeed);
+        GetComponent<Rigidbody>().velocity = new Vector3(3 * moveHorizontal, 0, 3 * moveVertical);//Fixes issue with player not rotating correctly
+        //transform.Translate(moveHorizontal * Time.deltaTime * playerSpeed, 0, moveVertical * Time.deltaTime * playerSpeed);
         //rb.velocity = movement * speed;
+        float angle = Mathf.Atan2(rx, ry);
+        GetComponent<Transform>().eulerAngles = new Vector3(0, angle, 0);
+
+        if ((rx > 0.2 || rx < -0.2) && (shotDelay == 0))
+        {
+            //shotDelay = Time.time + fireRate;
+            shotDelay = 1;
+            Instantiate(shotSpawner, transform.position, shotSpawner.rotation);
+            StartCoroutine(delayReset());
+        }
+        if ((ry > 0.2 || ry < -0.2) && (shotDelay == 0))
+        {
+            //shotDelay = Time.time + fireRate;
+            shotDelay = 1;
+            Instantiate(shotSpawner, transform.position, shotSpawner.rotation);
+            StartCoroutine(delayReset());
+        }
         rb.position = new Vector3
             (
                 Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
                 0.0f,
                 Mathf.Clamp(rb.position.z,boundary.zMin, boundary.zMax)
             );
-        float rx = Input.GetAxis("Right_Horizontal");
-        float ry = Input.GetAxis("Right_Vertical");
 
-        float angle = Mathf.Atan2(rx, ry);
-        transform.rotation = Quaternion.EulerAngles(0, angle, 0);
+
+        //Vector3 pDirection = Vector3.right * rx + Vector3.forward * ry;
+        //GetComponent<Transform>().eulerAngles = pDirection;
+        
     }
+    IEnumerator delayReset()
+    {
+        yield return new WaitForSeconds(0.4f);
+        shotDelay = 0;
+    }
+    
 }

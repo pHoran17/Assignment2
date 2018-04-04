@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Other
+  - Seeker
+  - Bystander
+  - Defender
   layers:
   - Default
   - TransparentFX

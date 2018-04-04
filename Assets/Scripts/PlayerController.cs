@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Boundary
+/*public class Boundary
 {
     public float xMin, xMax, zMin, zMax;
 }
+*/
 public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
     public float playerSpeed;
-    public Boundary boundary;
+    //public Boundary boundary;
 
    
     private float fireRate;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     }
     private void FixedUpdate()
     {
+        //Variables for analog stick input
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         float rx = Input.GetAxis("Right_Horizontal");
@@ -59,12 +61,14 @@ public class PlayerController : MonoBehaviour {
             Instantiate(shotSpawner, transform.position, shotSpawner.rotation);
             StartCoroutine(delayReset());
         }
-        rb.position = new Vector3
+        //Keeps player within boundaries of screen
+        /*rb.position = new Vector3
             (
                 Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
                 0.0f,
                 Mathf.Clamp(rb.position.z,boundary.zMin, boundary.zMax)
             );
+        */
 
 
         //Vector3 pDirection = Vector3.right * rx + Vector3.forward * ry;

@@ -6,14 +6,14 @@ public class Shot : MonoBehaviour {
 
     public float speed;
     public float sRotate;
-    Rigidbody rb;
+    //Rigidbody rb;
 
     // Use this for initialization
     void Start ()
     {
         float rx = Input.GetAxis("Right_Horizontal");
         float ry = Input.GetAxis("Right_Vertical");
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         
         if (rx > 0.2)
         {
@@ -35,8 +35,8 @@ public class Shot : MonoBehaviour {
             ry = -5;
             sRotate = 0;
         }
-        rb.velocity = new Vector3(rx, 0, ry);
-        GetComponent<Transform>().eulerAngles = new Vector3(0, sRotate, 0);
+        GetComponent<Rigidbody>().velocity = new Vector3(rx, ry, 0);
+        GetComponent<Transform>().eulerAngles = new Vector3(0, 0, sRotate);
     }
 	
 	// Update is called once per frame

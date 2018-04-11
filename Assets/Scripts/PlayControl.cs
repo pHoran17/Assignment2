@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*[System.Serializable]
+[System.Serializable]
 public class Boundary
 {
     public float xMin, xMax, zMin, zMax;
 }
-*/
+
 public class PlayControl : MonoBehaviour {
 
     public float speed;
@@ -17,7 +17,7 @@ public class PlayControl : MonoBehaviour {
     private float rx, ry;
     public Weapon weapon;
     public Transform shotSpawn;
-    //public Boundary boundary;
+    public Boundary boundary;
 
 
     // Use this for initialization
@@ -41,13 +41,13 @@ public class PlayControl : MonoBehaviour {
         {
             weapon.isShooting = false;
         }
-        /*rb.position = new Vector3
+        rb.position = new Vector3
             (
                 Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
                 0.0f,
                 Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
             );
-        */
+        
 
     }
     //Occurs every 0.2 seconds

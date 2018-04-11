@@ -396,6 +396,11 @@ MonoBehaviour:
   speed: 5
   weapon: {fileID: 2103598979}
   shotSpawn: {fileID: 4375385468584390, guid: f2ebd216744bbf44795e544821967bfa, type: 2}
+  boundary:
+    xMin: -8
+    xMax: 8
+    zMin: -4.5
+    zMax: 4.5
 --- !u!1 &811175680
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0fbb10ad452da4ea371811eab3855c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
 --- !u!4 &888859491 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4fc2b7675e0a9e7419b8402c33c36dc5, type: 3}

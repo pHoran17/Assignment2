@@ -8,6 +8,7 @@ TagManager:
   - Seeker
   - Bystander
   - Defender
+  - Astroid
   layers:
   - Default
   - TransparentFX

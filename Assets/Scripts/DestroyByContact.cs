@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyByContact : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class DestroyByContact : MonoBehaviour
+{
+    public GameObject explosion;
+     void OnTriggerEnter(Collider other)
+     {
+        if(other.tag == "Astroid")
+        {
+            return;
+        }
+        Instantiate(explosion,transform.position,transform.rotation);
+        Destroy(other.gameObject);
+        Destroy(gameObject);
+     }
 }

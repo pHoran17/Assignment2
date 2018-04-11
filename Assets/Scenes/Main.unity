@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1720082780}
   m_Layer: 0
   m_Name: GameContoller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -707,6 +707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31961d165d59764aa079595cdf7b11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hazard: {fileID: 1745342638988574, guid: bedf5b85402511b48bde138b403759ba, type: 2}
+  spawnValues: {x: 8, y: 0, z: 5}
 --- !u!4 &1720082781
 Transform:
   m_ObjectHideFlags: 0

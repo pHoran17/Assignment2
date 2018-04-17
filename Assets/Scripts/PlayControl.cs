@@ -29,10 +29,10 @@ public class PlayControl : MonoBehaviour {
 	// Update is called once per frame(frame rate will vary)
 	void Update ()
     {
-        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
         moveVelocity = movement * speed;
-        Vector3 pDirection = Vector3.right * rx + Vector3.forward * ry;
-        if(pDirection.sqrMagnitude > 0)
+        Vector3 pDirection = Vector3.right * Input.GetAxisRaw("Right_Horizontal") + Vector3.forward * Input.GetAxisRaw("Right_Vertical");
+        if(pDirection.sqrMagnitude > 0.0f)
         {
             transform.rotation = Quaternion.LookRotation(pDirection, Vector3.up);
             weapon.isShooting = true;

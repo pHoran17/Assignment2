@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114238731497588278}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Astroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +84,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -99,6 +100,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -169,7 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0fbb10ad452da4ea371811eab3855c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
+  explosion: {fileID: 100004, guid: 9b208a84b54f24947b9409f6db81fd2b, type: 2}
+  pExplosion: {fileID: 100008, guid: 04fa6bc8229ef3941a3527080a64e9b5, type: 2}
 --- !u!136 &136283542312589354
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour {
     public float moveSpeed;
     public PlayControl player;
     public int enemyType;
+    public int health;
+    public int currentHealth;
    
     //public float maxDist, minDist;
 	// Use this for initialization
@@ -16,10 +18,15 @@ public class EnemyController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayControl>();
+        currentHealth = health;
         if (enemyType == 1)
         {
             rb.velocity = new Vector3(Random.Range(-4, 3), 0, Random.Range(-8, 2)) * moveSpeed;
         }
+    }
+    public void HurtEnemy(int damage)
+    {
+        currentHealth -= damage;
     }
     private void FixedUpdate()
     {
@@ -35,6 +42,10 @@ public class EnemyController : MonoBehaviour {
         if(enemyType == 2)//For defender enemies, avoids player
         {
             rb.velocity = -(transform.forward * moveSpeed);
+        }
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
         }
         //rb.velocity = (transform.forward * moveSpeed);
        

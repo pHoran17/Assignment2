@@ -9,6 +9,8 @@ TagManager:
   - Bystander
   - Defender
   - Astroid
+  - Enemy
+  - Boundary
   layers:
   - Default
   - TransparentFX

@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 54830204089200220}
   - component: {fileID: 23386453408445618}
   - component: {fileID: 114129991746147716}
+  - component: {fileID: 136639086493463806}
   m_Layer: 0
   m_Name: Seeker
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400766379350816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: -5}
+  m_LocalPosition: {x: 5, y: 0, z: -5}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4785993302433610}
@@ -205,5 +206,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   player: {fileID: 0}
-  maxDist: 20
-  minDist: 0.1
+  enemyType: 0
+  health: 1
+  currentHealth: 0
+--- !u!136 &136639086493463806
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400766379350816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.64
+  m_Height: 1.48
+  m_Direction: 2
+  m_Center: {x: 3.2, y: 0.74, z: 2.22}

@@ -18,7 +18,7 @@ public class ShotControl : MonoBehaviour {
 	}
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Astroid")
         {
             other.gameObject.GetComponent<EnemyController>().HurtEnemy(shotDamage);
             Destroy(gameObject);

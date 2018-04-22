@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 136283542312589354}
   - component: {fileID: 114071640470514472}
   - component: {fileID: 114238731497588278}
+  - component: {fileID: 114287357525714922}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Astroid
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745342638988574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 1, z: 3}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4268438077281518}
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7329177239b0674b94b0c390138c8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 3
+  tumble: 2
 --- !u!114 &114238731497588278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,6 +174,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100004, guid: 9b208a84b54f24947b9409f6db81fd2b, type: 2}
   pExplosion: {fileID: 100008, guid: 04fa6bc8229ef3941a3527080a64e9b5, type: 2}
+--- !u!114 &114287357525714922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745342638988574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c02946f0b793b49b1dd2635e25f13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  player: {fileID: 0}
+  enemyType: 3
+  health: 1
+  currentHealth: 1
 --- !u!136 &136283542312589354
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -180,7 +197,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745342638988574}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.48091877
   m_Height: 1.0638037

@@ -18,11 +18,16 @@ public class EnemyController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayControl>();
-        currentHealth = health;
         if (enemyType == 1)
         {
             rb.velocity = new Vector3(Random.Range(-4, 3), 0, Random.Range(-8, 2)) * moveSpeed;
         }
+        if(enemyType == 3)
+        {
+            health = 1;
+            rb.velocity = - transform.forward * moveSpeed;
+        }
+        currentHealth = health;
     }
     public void HurtEnemy(int damage)
     {
@@ -43,7 +48,12 @@ public class EnemyController : MonoBehaviour {
         {
             rb.velocity = -(transform.forward * moveSpeed);
         }
-        if(currentHealth <= 0)
+        /*if (enemyType == 3)//for asteroids just move forward
+        {
+            rb.velocity = (transform.forward * moveSpeed);
+        }
+        */
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }

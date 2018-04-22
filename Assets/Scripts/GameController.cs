@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -12,8 +13,21 @@ public class GameController : MonoBehaviour
     public EnemyController enemyController;
     public Vector3 spawnValues;
 
-	void Start ()
+    public Text scoreText;
+    public Text restartText;
+    public Text gameOverText;
+    private int score;
+
+    private bool gameOver;
+    private bool restart;
+
+    void Start ()
     {
+        score = 0;
+        gameOver = false;
+        restart = false;
+        restartText.text = "";
+        gameOverText.text = "";
         StartCoroutine(spawnWaves()); 
 	}
 
@@ -32,6 +46,7 @@ public class GameController : MonoBehaviour
             Instantiate(hazard, astSpawnPos, spawnRotation);
             yield return new WaitForSeconds(spawnWait);
         }
+        
         /*Vector3 astSpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
         //Need to randomly spawn different ships with relevant behaviours
         Quaternion spawnRotation = new Quaternion();
@@ -52,5 +67,28 @@ public class GameController : MonoBehaviour
         //Instantiate(hazard, astSpawnPos, spawnRotation);
         
     }
-	
+    private void Update()
+    {
+        if (restart)
+        {
+            if (Input.GetButtonDown("JoystickButton7"))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            }
+        }
+    }
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue;
+        UpdateScore();
+    }
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + score;
+    }
+    public void GameOver()
+    {
+        gameOverText.text = "Game Over";
+        gameOver = true;
+    }
 }

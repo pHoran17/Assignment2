@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114071640470514472}
   - component: {fileID: 114238731497588278}
   - component: {fileID: 114287357525714922}
+  - component: {fileID: 114040249570832920}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Astroid
@@ -149,6 +150,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114040249570832920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745342638988574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f523ee25bd95549a038a787e30086a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  currentHealth: 0
+  ec: {fileID: 0}
 --- !u!114 &114071640470514472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,8 +204,6 @@ MonoBehaviour:
   moveSpeed: 2
   player: {fileID: 0}
   enemyType: 3
-  health: 1
-  currentHealth: 1
 --- !u!136 &136283542312589354
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -9,8 +9,6 @@ public class EnemyController : MonoBehaviour {
     public float moveSpeed;
     public PlayControl player;
     public int enemyType;
-    public int health;
-    public int currentHealth;
    
     //public float maxDist, minDist;
 	// Use this for initialization
@@ -20,7 +18,7 @@ public class EnemyController : MonoBehaviour {
         player = FindObjectOfType<PlayControl>();
         if(enemyType == 0)
         {
-            health = 1;
+            
         }
         if (enemyType == 1)
         {
@@ -28,15 +26,11 @@ public class EnemyController : MonoBehaviour {
         }
         if(enemyType == 3)
         {
-            health = 1;
+ 
             rb.velocity = - transform.forward * moveSpeed;
         }
-        currentHealth = health;
     }
-    public void HurtEnemy(int damage)
-    {
-        currentHealth -= damage;
-    }
+ 
     private void FixedUpdate()
     {
 
@@ -57,10 +51,6 @@ public class EnemyController : MonoBehaviour {
             rb.velocity = (transform.forward * moveSpeed);
         }
         */
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
         //rb.velocity = (transform.forward * moveSpeed);
        
        // transform.position += transform.forward * moveSpeed * Time.deltaTime;

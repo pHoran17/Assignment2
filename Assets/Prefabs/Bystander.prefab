@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 54557357567260250}
   - component: {fileID: 23273373804688806}
   - component: {fileID: 114892847729363742}
+  - component: {fileID: 114037235644664746}
   m_Layer: 0
   m_Name: Bystander
   m_TagString: Bystander
@@ -192,6 +193,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114037235644664746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898537935476008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f523ee25bd95549a038a787e30086a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  currentHealth: 0
+  ec: {fileID: 0}
 --- !u!114 &114892847729363742
 MonoBehaviour:
   m_ObjectHideFlags: 1

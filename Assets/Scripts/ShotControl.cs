@@ -20,7 +20,7 @@ public class ShotControl : MonoBehaviour {
     {
         if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Astroid")
         {
-            other.gameObject.GetComponent<EnemyController>().HurtEnemy(shotDamage);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(shotDamage);
             Destroy(gameObject);
         }
     }

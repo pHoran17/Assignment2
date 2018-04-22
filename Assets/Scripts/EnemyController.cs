@@ -18,6 +18,10 @@ public class EnemyController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayControl>();
+        if(enemyType == 0)
+        {
+            health = 1;
+        }
         if (enemyType == 1)
         {
             rb.velocity = new Vector3(Random.Range(-4, 3), 0, Random.Range(-8, 2)) * moveSpeed;
@@ -38,7 +42,7 @@ public class EnemyController : MonoBehaviour {
 
         if(enemyType == 0)//for seeker enemies just move forward with rotation
         {
-            rb.velocity = (transform.forward * moveSpeed);
+            //rb.velocity = (transform.forward * moveSpeed);
         }
         if(enemyType == 1)//For Bystander enemies, wanders through level
         {

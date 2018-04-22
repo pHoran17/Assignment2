@@ -6,6 +6,7 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject pExplosion;
+    public GameObject eExplosion;
     private GameController gameController;
     private void Start()
     {
@@ -29,6 +30,10 @@ public class DestroyByContact : MonoBehaviour
         if(other.tag == "Player")
         {
             Instantiate(pExplosion,other.transform.position,other.transform.rotation);
+        }
+        if (other.tag == "Enemy")
+        {
+            Instantiate(eExplosion, other.transform.position, other.transform.rotation);
         }
         Destroy(other.gameObject);
         Destroy(gameObject);

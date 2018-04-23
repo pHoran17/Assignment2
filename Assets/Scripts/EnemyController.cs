@@ -10,12 +10,15 @@ public class EnemyController : MonoBehaviour {
     public PlayControl player;
     public int enemyType;
     public int pDamage;
+    public float shotSpeed;
+    public Collider col;
    
     //public float maxDist, minDist;
 	// Use this for initialization
 	void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
         player = FindObjectOfType<PlayControl>();
         if(enemyType == 0)
         {
@@ -68,7 +71,7 @@ public class EnemyController : MonoBehaviour {
         }
         */
     }
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         if(enemyType == 0)
         {
@@ -79,6 +82,7 @@ public class EnemyController : MonoBehaviour {
             }
         }
     }
+    */
     // Update is called once per frame
     void Update ()
     {

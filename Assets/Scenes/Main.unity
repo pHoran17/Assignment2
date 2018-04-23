@@ -412,6 +412,8 @@ MonoBehaviour:
     xMax: 8
     zMin: -4.5
     zMax: 4.5
+  currentHealth: 0
+  damage: 0
 --- !u!114 &993441837 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114892847729363742, guid: e0b477f73e63bc248b8bb4076e01cf81,
@@ -978,12 +980,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31961d165d59764aa079595cdf7b11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWait: 4
-  spawnWait: 3
+  startWait: 3
+  spawnWait: 2
+  waveWait: 5
   hazard: {fileID: 1745342638988574, guid: bedf5b85402511b48bde138b403759ba, type: 2}
   enemyShip: {fileID: 1400766379350816, guid: a329786e3d6315c449b5d422c1ac5f28, type: 2}
   enemyController: {fileID: 993441837}
   spawnValues: {x: 8, y: 0, z: 5}
+  spawnCount: 10
   scoreText: {fileID: 1103740924}
   restartText: {fileID: 2014043108}
   gameOverText: {fileID: 1425437366}

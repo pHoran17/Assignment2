@@ -31,6 +31,7 @@ public class DestroyByContact : MonoBehaviour
         if(other.tag == "Player")
         {
             Instantiate(pExplosion,other.transform.position,other.transform.rotation);
+            gameController.GameOver();
         }
         if (other.tag == "Enemy")
         {
@@ -38,7 +39,6 @@ public class DestroyByContact : MonoBehaviour
         }
         Destroy(other.gameObject);
         Destroy(gameObject);
-        //Destroy(explosion);
-        //Destroy(eExplosion);
+
      }
 }

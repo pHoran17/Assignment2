@@ -27,5 +27,11 @@ public class ShotControl : MonoBehaviour {
             gc.AddScore(scoreValue);
             Destroy(gameObject);
         }
+        /*if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayControl>().hurtPlayer(shotDamage);
+            Destroy(gameObject);
+        }
+        */
     }
 }

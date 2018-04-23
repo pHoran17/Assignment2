@@ -5,13 +5,9 @@ using UnityEngine;
 public class DestroyByTime : MonoBehaviour {
 
     public float lifetime;
-    // Use this for initialization
-	void Start ()
-    {
-        //Destroy(gameObject, lifetime);
-    }
-
-    // Update is called once per frame
+    
+    //
+    //Destroys any object this script is attached to after a specified amount of time
     void Update ()
     {
         lifetime -= Time.deltaTime;

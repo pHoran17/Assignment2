@@ -47,25 +47,6 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(spawnWait);
         }
         
-        /*Vector3 astSpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-        //Need to randomly spawn different ships with relevant behaviours
-        Quaternion spawnRotation = new Quaternion();
-        enemyController.enemyType = Random.Range(0, 2);
-        int i = enemyController.enemyType;
-        Vector3 enemySpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, Random.Range(-spawnValues.z, spawnValues.z));
-        Instantiate(enemies[i], enemySpawnPos, spawnRotation);
-        */
-        /*while (enemyController.enemyType != 3) //when game ends enemytype = 3 to end loop       
-        {
-            enemyController.enemyType = Random.Range(0, 2);
-            int i = enemyController.enemyType;
-            Vector3 enemySpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, Random.Range(-spawnValues.z, spawnValues.z));
-            Instantiate(enemies[i], enemySpawnPos, spawnRotation);
-        }*/
-
-
-        //Instantiate(hazard, astSpawnPos, spawnRotation);
-        
     }
     private void Update()
     {

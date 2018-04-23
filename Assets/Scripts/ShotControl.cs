@@ -6,9 +6,12 @@ public class ShotControl : MonoBehaviour {
 
     public float speed;
     public int shotDamage;
+    public int scoreValue;
+    public GameController gc;
     // Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        gc = GetComponent<GameController>();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +24,7 @@ public class ShotControl : MonoBehaviour {
         if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Astroid")
         {
             other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(shotDamage);
+            gc.AddScore(scoreValue);
             Destroy(gameObject);
         }
     }

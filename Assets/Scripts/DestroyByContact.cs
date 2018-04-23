@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
+    public int lifetime;
     public GameObject explosion;
     public GameObject pExplosion;
     public GameObject eExplosion;
@@ -37,5 +38,7 @@ public class DestroyByContact : MonoBehaviour
         }
         Destroy(other.gameObject);
         Destroy(gameObject);
+        //Destroy(explosion);
+        //Destroy(eExplosion);
      }
 }

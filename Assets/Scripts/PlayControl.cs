@@ -18,6 +18,8 @@ public class PlayControl : MonoBehaviour {
     public Weapon weapon;
     public Transform shotSpawn;
     public Boundary boundary;
+    public int currentHealth;
+    public int damage;
 
 
     // Use this for initialization
@@ -49,6 +51,10 @@ public class PlayControl : MonoBehaviour {
             );
         
 
+    }
+    public void hurtPlayer(int damage)
+    {
+        currentHealth -= damage;
     }
     //Occurs every 0.2 seconds
     private void FixedUpdate()

@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
     public float moveSpeed;
     public PlayControl player;
     public int enemyType;
+    public int pDamage;
    
     //public float maxDist, minDist;
 	// Use this for initialization
@@ -67,6 +68,17 @@ public class EnemyController : MonoBehaviour {
         }
         */
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if(enemyType == 0)
+        {
+            if(other.gameObject.tag == "Player")
+            {
+                other.gameObject.GetComponent<PlayControl>().hurtPlayer(pDamage);
+                Destroy(gameObject);
+            }
+        }
+    }
     // Update is called once per frame
     void Update ()
     {
@@ -87,4 +99,5 @@ public class EnemyController : MonoBehaviour {
 
 
     }
+
 }

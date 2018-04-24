@@ -8,11 +8,14 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float spawnWait;
     public float waveWait;
+    public GameObject player;
     public GameObject hazard;
     public GameObject enemyShip;
     //public GameObject[] enemies;
     public EnemyController enemyController;
+    public PlayControl pc;
     public Vector3 spawnValues;
+    public Vector3 pSpawn;
     public int spawnCount;
     public Text scoreText;
     public Text restartText;
@@ -21,6 +24,7 @@ public class GameController : MonoBehaviour
 
     private bool gameOver;
     private bool restart;
+    private bool alive;
 
     void Start ()
     {
@@ -43,8 +47,8 @@ public class GameController : MonoBehaviour
                 Vector3 astSpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 //Need to randomly spawn different ships with relevant behaviours
                 Quaternion spawnRotation = new Quaternion();
-                enemyController.enemyType = Random.Range(0, 2);
-                //int i = enemyController.enemyType;
+                //enemyController.enemyType = Random.Range(0, 1);
+                //int j = enemyController.enemyType;
                 Vector3 enemySpawnPos = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, Random.Range(-spawnValues.z, spawnValues.z));
                 Instantiate(enemyShip, enemySpawnPos, spawnRotation);
                 Instantiate(hazard, astSpawnPos, spawnRotation);
@@ -55,16 +59,17 @@ public class GameController : MonoBehaviour
             {
                 restartText.text = "Press Start to restart";
                 restart = true;
-                break;
+                yield break;
             }
+            
         }
-        
+
     }
     private void Update()
     {
         if (restart)
         {
-            if (Input.GetButtonDown("JoystickButton7"))
+            if (Input.GetButtonDown("Restart"))
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(0);
             }
@@ -83,5 +88,7 @@ public class GameController : MonoBehaviour
     {
         gameOverText.text = "Game Over";
         gameOver = true;
+        //pc.alive = false;
+
     }
 }

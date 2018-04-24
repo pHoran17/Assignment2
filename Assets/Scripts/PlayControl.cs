@@ -20,12 +20,14 @@ public class PlayControl : MonoBehaviour {
     public Boundary boundary;
     public int currentHealth;
     public int damage;
+    public bool alive;
 
 
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        //alive = true;
 	}
 	
 	// Update is called once per frame(frame rate will vary)

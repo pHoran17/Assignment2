@@ -5,10 +5,13 @@ using UnityEngine;
 public class DestroyByContact : MonoBehaviour
 {
     public int lifetime;
+    public int scoreValue;
     public GameObject explosion;
     public GameObject pExplosion;
     public GameObject eExplosion;
+    private PlayControl pc;
     private GameController gameController;
+
     private void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -20,6 +23,7 @@ public class DestroyByContact : MonoBehaviour
         {
             Debug.Log("Cannot find 'GameController' script");
         }
+        //pc.gameObject.GetComponent<Renderer>().enabled = true;
     }
     void OnTriggerEnter(Collider other)
      {
@@ -27,16 +31,21 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
-        Instantiate(explosion,transform.position,transform.rotation);
-        if(other.tag == "Player")
+        Instantiate(explosion, transform.position, transform.rotation);
+        if (other.tag == "Player")
         {
-            Instantiate(pExplosion,other.transform.position,other.transform.rotation);
+            Instantiate(pExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
+            //pc.gameObject.GetComponent<Renderer>().enabled = false;
+            //Object.DestroyObject(other.gameObject);
         }
         if (other.tag == "Enemy")
         {
             Instantiate(eExplosion, other.transform.position, other.transform.rotation);
+            Destroy(other.gameObject);
         }
+        
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
 

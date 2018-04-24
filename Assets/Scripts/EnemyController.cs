@@ -88,10 +88,15 @@ public class EnemyController : MonoBehaviour {
     {
        if(enemyType == 0)
         {
-            Vector3 lookAt = player.transform.position - transform.position;
-            lookAt.y = 0;
-            var rotation = Quaternion.LookRotation(lookAt);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+            if(player != null)
+            {
+                Vector3 lookAt = player.transform.position - transform.position;
+                lookAt.y = 0;
+                var rotation = Quaternion.LookRotation(lookAt);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+            }
+            
+            
             //transform.LookAt(lookAt);
         }
        if(enemyType == 1)

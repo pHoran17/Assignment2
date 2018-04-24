@@ -28,7 +28,8 @@ public class Weapon : MonoBehaviour
                 shotCounter = shotDelay;
                 ShotControl newShot = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as ShotControl;
                 newShot.speed = shotSpeed;
-                
+                newShot.GetComponent<AudioSource>().Play();
+
             }
         }
         else

@@ -869,6 +869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720082781}
   - component: {fileID: 1720082780}
+  - component: {fileID: 1720082782}
   m_Layer: 0
   m_Name: GameContoller
   m_TagString: GameController
@@ -890,11 +891,13 @@ MonoBehaviour:
   startWait: 3
   spawnWait: 0.5
   waveWait: 4
+  player: {fileID: 0}
   hazard: {fileID: 1745342638988574, guid: bedf5b85402511b48bde138b403759ba, type: 2}
   enemyShip: {fileID: 1400766379350816, guid: a329786e3d6315c449b5d422c1ac5f28, type: 2}
   enemyController: {fileID: 0}
   pc: {fileID: 0}
   spawnValues: {x: 8, y: 0, z: 5}
+  pSpawn: {x: 0, y: 0, z: 0}
   spawnCount: 8
   scoreText: {fileID: 1103740924}
   restartText: {fileID: 2014043108}
@@ -913,6 +916,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1720082782
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720082779}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cecc045dc877d764a86dd1aab03ebee5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.637
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &1767460482
 Prefab:
   m_ObjectHideFlags: 0
